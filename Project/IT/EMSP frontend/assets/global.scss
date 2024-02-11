@@ -1,0 +1,52 @@
+@import "./fonts.css";
+@import "./reset";
+@import "./variables";
+
+html {
+  .v-application {
+    font-family: "lato", Arial, Helvetica, sans-serif !important;
+
+    [class*="text-"],
+    [class*="subtitle-"] {
+      font-family: "lato", Arial, Helvetica, sans-serif !important;
+    }
+  }
+}
+
+body,
+a {
+  font-family: "lato", Arial, Helvetica, sans-serif;
+}
+
+.v-card-box-shadow {
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.centered {
+  display: grid;
+  place-items: center;
+}
+
+.contained {
+  max-width: 1460px !important;
+  margin-inline: auto !important;
+  padding-inline: 1rem !important;
+}
+
+.v-card-box-shadow {
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.font-color {
+  color: var(--clr-main-400);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}

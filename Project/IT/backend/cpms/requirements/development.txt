@@ -1,0 +1,6 @@
+-r base.txt
+
+psycopg2-binary==2.9.5
+django-debug-toolbar==3.7.0
+django-extensions==3.2.1
+Faker==16.4.0

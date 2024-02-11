@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  emsp_frontend:
+    container_name: emsp_frontend
+    restart: on-failure
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - BASE_URL=http://161.35.153.88:8000/api
+      - BROWSER_BASE_URL=http://161.35.153.88:8000/api

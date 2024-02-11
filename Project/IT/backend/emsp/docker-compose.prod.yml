@@ -1,0 +1,26 @@
+services:
+  django:
+    container_name: "emsp_backend"
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=${MODE}
+    command:
+      - /bin/sh
+      - -c
+      - |
+          sleep 10 
+          python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+    env_file:
+      - ./emsp/settings/environments/.env
+    environment:
+      PYTHONUNBUFFERED: 1
+      DJANGO_SETTINGS_MODULE: emsp.settings
+    depends_on:
+      - postgres

@@ -1,0 +1,61 @@
+@import './fonts.css';
+
+html,
+body,
+.theme--light.v-application {
+  background-color: #f2f2f2 !important;
+}
+
+html {
+  .v-application {
+    font-family: 'lato', Arial, Helvetica, sans-serif !important;
+
+    .title,
+    .headline,
+    [class*='text-'],
+    [class*='subtitle-'] {
+      font-family: 'lato', Arial, Helvetica, sans-serif !important;
+    }
+  }
+}
+
+body,
+a {
+  font-family: 'lato', Arial, Helvetica, sans-serif;
+}
+
+.v-card-box-shadow {
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.centered {
+  display: grid;
+  place-items: center;
+}
+
+.v-input {
+  fieldset {
+    border-color: var(--clr-primary-500) !important;
+  }
+
+  .v-input__slot::before,
+  .v-input__slot::after {
+    border-color: var(--clr-primary-500) !important;
+  }
+
+  &.error--text {
+    fieldset {
+      border-color: var(--clr-accent-1) !important;
+    }
+
+    .v-input__slot::before,
+    .v-input__slot::after {
+      border-color: var(--clr-accent-1) !important;
+    }
+  }
+}
+
+.v-messages.error--text {
+  color: var(--clr-accent-1) !important;
+}

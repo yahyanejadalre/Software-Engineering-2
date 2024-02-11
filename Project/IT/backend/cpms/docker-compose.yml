@@ -1,0 +1,24 @@
+version: "3.8"
+
+# https://github.com/kartoza/docker-postgis/blob/develop/docker-compose.yml
+# https://realpython.com/location-based-app-with-geodjango-tutorial/
+
+services:
+  postgres:
+    image: kartoza/postgis:15-3.3
+    container_name: 'cpms_db'
+    restart: "no"
+    ports:
+      - "5434:5432"
+    expose:
+      - 5434
+    environment:
+      - POSTGRES_DB=cpms
+      - POSTGRES_USER=cpms
+      - POSTGRES_PASSWORD=cpms
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+
+
+volumes:
+  postgres-data:

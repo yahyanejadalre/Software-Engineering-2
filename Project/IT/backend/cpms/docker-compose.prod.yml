@@ -1,0 +1,27 @@
+services:
+  django:
+    container_name: "cpms_backend"
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=${MODE}
+    command:
+      - /bin/sh
+      - -c
+      - |
+        sleep 30 
+        python manage.py runserver 0.0.0.0:8000
+
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "8001:8000"
+    expose:
+      - 8001
+    env_file:
+      - ./cpms/settings/environments/.env
+    environment:
+      PYTHONUNBUFFERED: 1
+      DJANGO_SETTINGS_MODULE: cpms.settings
+    depends_on:
+      - postgres
